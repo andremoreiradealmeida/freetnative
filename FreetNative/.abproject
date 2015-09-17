@@ -18,11 +18,11 @@
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "AndroidHardwareAcceleration": "false",
   "iOSStatusBarStyle": "Default",
   "FrameworkVersion": "1.2.3",
-  "Framework": "NativeScript"
+  "Framework": "NativeScript",
+  "iOSDeploymentTarget": "7.1"
 }
