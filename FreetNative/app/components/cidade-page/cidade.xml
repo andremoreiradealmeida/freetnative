@@ -1,0 +1,17 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"  navigatedTo="navigatedTo">
+  <Page.actionBar>
+    <ActionBar title="cidades">
+      <NavigationButton tap="tapVoltar" text="Voltar"/>
+    </ActionBar>
+  </Page.actionBar>
+
+  <StackLayout orientation="vertical">
+
+    <ListView items="{{ cidades }}">
+      <ListView.itemTemplate>
+      </ListView.itemTemplate>
+    </ListView>
+
+  </StackLayout>
+
+</Page>

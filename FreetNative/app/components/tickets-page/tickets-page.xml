@@ -1,0 +1,83 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="navigatedTo">
+
+  <Page.actionBar id="actionBarMain"  >
+    <ActionBar title="Freet">
+      <ActionBar.actionItems  >
+        <ActionItem  android:icon="~/resources/icons/favorito.png" android.position="right"  ios.position="right" />
+        <ActionItem tap="tapAtualizar" text="Atualizar" ios.position="right" android.position="popup" icon="~/res/ic_search_white.png"/>
+        <ActionItem tap="tapLogout" text="Sair" ios.position="right" android.position="popup"/>
+        <ActionItem tap="tapEmpresas" text="Empresas" ios.position="right" android.position="popup"/>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+
+  <TabView id="tabMain"  >
+
+    <TabView.items>
+
+      <TabViewItem title="Tickets">
+        <TabViewItem.view>
+          <StackLayout orientation="vertical">
+
+            <ListView items="{{ itemsTickets }}" >
+              <ListView.itemTemplate >
+                <Border borderWidth="1" borderColor="#ccc" cssClass="listItem" style="background-color:#fff">
+
+                  <StackLayout orientation="vertical">
+
+                    <GridLayout rows="auto,auto,30" columns="100,auto" style="background-color:#fff" >
+
+                      <Image row="0" col="0" src="{{ thumb }}" style="widht:100;height:100" tap="thumbItemTap"   />
+                      <Label row="0" col="1" textWrap="true"  width="230" nomeEmpresa="{{ nomeEmpresa }}"  text="{{ titulo }}" style="margin:5" tap="listViewItemLabelTap"  />
+                      <Label row="1" col="0" colSpan="2" textWrap="true" style="color:#da6d27" text="{{ nomeEmpresa }}" style="margin:5" />
+                      <Label row="2" col="0" colSpan="2" text="icones..." style="margin:5"  textWrap="true"  />
+
+                    </GridLayout>
+                    <Button text="Resgatar" idCampanha="{{ id }}" tap="resgatarTicket" cssClass="laranja"/>
+
+                  </StackLayout>
+
+                </Border>
+              </ListView.itemTemplate>
+            </ListView>
+
+          </StackLayout>
+        </TabViewItem.view>
+      </TabViewItem>
+
+      <TabViewItem title="Minha Carteira">
+        <tabviewitem.view>
+
+          <StackLayout orientation="vertical">
+            <ListView items="{{ itemsMinhaCarteira }}" itemTap="listViewItemTapMinhaCarteira">
+              <ListView.itemTemplate >
+                <Border borderWidth="1" borderColor="#ccc" cssClass="listItem" style="background-color:#fff">
+                  <GridLayout rows="auto,auto,30,40" columns="100,auto" style="background-color:#fff" >
+                    <Image row="0" col="0" src="{{ thumb }}" style="widht:100;height:100"   />
+                    <Label row="0" col="1" textWrap="true"  width="230"  text="{{ titulo }}" style="margin:5"    />
+                    <Label row="1" col="0" colSpan="2" textWrap="true" style="color:#da6d27" text="{{ nomeEmpresa }}" style="margin:5" />
+                    <Label row="2" col="0" colSpan="2" text="icones..." style="margin:5"  textWrap="true"  />
+                  </GridLayout>
+                </Border>
+              </ListView.itemTemplate>
+            </ListView>
+          </StackLayout>
+
+        </tabviewitem.view>
+      </TabViewItem>
+
+      <TabViewItem title="Notícias">
+        <tabviewitem.view>
+
+          <StackLayout orientation="vertical">
+            <ListView items="{{ itemsNoticia }}" itemTap="listViewItemTapNoticia">
+
+            </ListView>
+          </StackLayout>
+
+        </tabviewitem.view>
+      </TabViewItem>
+
+    </TabView.items>
+  </TabView>
+</Page>

@@ -1,4 +1,19 @@
 var application = require("application");
-application.mainModule = "main-page";
-application.cssFile = "./app.css";
+var viewsModule = require("./utils/views");
+
+
+global.idUsuario="";
+global.idCidade="";
+
+application.onLaunch = function (context) {
+    var serviceModule = require("./utils/service");
+    if (serviceModule.service.isAuthenthicated) {
+        application.mainModule = viewsModule.Views.login;
+    }
+    else {
+        application.mainModule = viewsModule.Views.login;
+    }
+};
+
+
 application.start();

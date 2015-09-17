@@ -1,0 +1,28 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"  navigatedTo="navigatedTo">
+  <Page.actionBar>
+    <ActionBar title="Cadastro">
+      <NavigationButton tap="voltar" text="Voltar"/>
+    </ActionBar>
+  </Page.actionBar>
+
+  <GridLayout>
+    <ScrollView>
+      <StackLayout>     
+        <label text="cadastro de usuario"/>
+        <TextField text="{{nome}}" hint="nome" autocapitalizationType="none" />
+        <Border cssClass="textFieldBorder" />
+        <TextField text="{{email}}" hint="e-mail" autocapitalizationType="none" />
+        <Border cssClass="textFieldBorder" />
+        <TextField text="{{ddd}}" hint="ddd" autocapitalizationType="none" />
+        <Border cssClass="textFieldBorder" />
+        <TextField text="{{celular}}" hint="celular" autocapitalizationType="none" />
+        <Border cssClass="textFieldBorder" />
+        <TextField text="{{cidade}}" hint="cidade" autocapitalizationType="none" />
+        <Button text="pesquisar cidade" tap="tapCidade" cssClass="primaryButton"/>
+        <Border cssClass="textFieldBorder" />
+        <Button text="Cadastrar" tap="tapCadastro" cssClass="primaryButton"/>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+
+</Page>

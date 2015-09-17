@@ -1,0 +1,21 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"  navigatedTo="navigatedTo">
+
+<Page.actionBar>
+    <ActionBar title="Freet">
+     <NavigationButton text="Voltar" tap="tapVoltar"/>
+    </ActionBar>
+  </Page.actionBar>
+
+
+  <ScrollView>
+    <StackLayout orientation="vertical" style="background-color:#fff;padding:5;">
+
+      <Image src="{{ banner }}" />
+      <Label text="{{ titulo }}"  />
+      <HtmlView html="{{ promocao }}" />
+      <Button tap="resgatarTicket" text="Resgatar" cssClass="laranja"/>
+
+    </StackLayout>
+  </ScrollView>
+  
+</Page>

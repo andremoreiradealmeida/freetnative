@@ -1,0 +1,36 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"  navigatedTo="navigatedTo">
+
+ <Page.actionBar id="actionBarMain"  >
+    <ActionBar title="Freet">
+      <NavigationButton text="Voltar" tap="tapVoltar"/>
+      <ActionBar.actionItems  >
+        <ActionItem tap="tapAtualizar" text="Atualizar" ios.position="right" android.position="popup" icon="~/res/ic_search_white.png"/>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+
+
+
+    <ListView items="{{ itemsEmpresas }}" itemTap="tapItemEmpresa" >
+      <ListView.itemTemplate >
+        <Border borderWidth="1" borderColor="#ccc" cssClass="listItem" style="background-color:#fff">
+
+          <StackLayout orientation="vertical">
+
+            <GridLayout rows="auto,auto,30" columns="100,auto" style="background-color:#fff" >
+
+              <Image row="0" col="0" src="{{ thumb }}" style="widht:70;70:100" />
+              <Label row="0" col="1" colSpan="2" textWrap="true" style="color:#da6d27" text="{{ nome }}" style="margin:5" />
+              <Label row="1" col="1" colSpan="2" textWrap="true" style="color:#da6d27" text="{{ 'Campnhas (' + campanhas + ')'}}" />
+
+            </GridLayout>
+            
+
+          </StackLayout>
+
+        </Border>
+      </ListView.itemTemplate>
+    </ListView>
+
+     
+</Page>

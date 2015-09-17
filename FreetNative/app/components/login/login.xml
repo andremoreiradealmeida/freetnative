@@ -1,0 +1,29 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="navigatedTo" actionBarHidden="true" >
+
+  <Page.actionBar >
+    <ActionBar title="Freet">
+      <ActionBar.actionItems>
+       
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+
+
+  <GridLayout>
+    <ScrollView>
+      <StackLayout>
+        <Image style="horizontal-align:center;" stretch="aspectFit" style="width:400" src="~/resources/images/logo.png"/>
+
+        <TextField text="{{ username }}" hint="username" autocapitalizationType="none" />
+        <Border cssClass="textFieldBorder" />
+        <TextField text="{{ password }}" secure="true" hint="password" />
+        <Border cssClass="textFieldBorder" />
+
+        <Button text="{{ strings.login }}" tap="tapLogin" cssClass="primaryButton"/>
+        <Button text="{{ strings.signUp }}" tap="tapCadastro" cssClass="secondaryButton"/>
+      </StackLayout>
+    </ScrollView>
+
+    <ActivityIndicator busy="{{ isLoading }}" />
+  </GridLayout>
+</Page>
